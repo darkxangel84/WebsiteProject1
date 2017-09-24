@@ -1,0 +1,13 @@
+// Button Hovers mixin
+
+
+@mixin setBgColorAndHover($Color, $Color2) {
+    	background-color: $Color;
+    	color: $Color2;
+    &:hover {
+          background-color: lighten($Color, 20%);
+          color: lighten($Color2, 10%);
+	}
+
+  }
+

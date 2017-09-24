@@ -1,0 +1,60 @@
+// ==== BURGER MENU STYLES ====
+
+.burger-menu {
+		position: relative;
+		position: absolute;
+		top:5px;
+		left: 15px;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+
+		.menubar {
+			position: absolute;
+			background-color: $light;
+			border-radius:50px;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			right: 0;
+			width: 25px;
+			height: 3px;
+			box-shadow: 0 2px 5px rgba(0,0,0,.2);
+			transition: all 0.2s ease-out;
+			
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				border-radius:50px;
+				width: 25px;
+				height: 3px;
+				background-color: $light;
+				box-shadow: 0 2px 5px rgba(0,0,0,.2);
+				transition: all .3s ease-out;
+			}
+
+			&:before {
+				top: -10px;
+			}
+
+			&:after {
+				top: 10px;
+			}
+
+		}
+}
+
+.burger-menu.active .menubar {
+		background-color: $dark;
+		box-shadow: 0 2px 5px rgba(0,0,0,0);
+
+		&:before {
+			transform: rotate(45deg);
+			top: 0;
+		}
+
+		&:after {
+			transform: rotate(135deg);
+			top: 0;
+		}
+}

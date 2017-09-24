@@ -1,0 +1,303 @@
+@import 'variables';
+@import 'mixin';
+@import 'base';
+@import 'burgerMenu';
+@import 'hero';
+@import 'form';
+
+/*PAGES*/
+
+
+
+/* ==== MOBILE FIRST ===== */
+.headercontainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+
+
+	/* ===== TABLET CODE  768px ====== */
+
+	@media screen and (min-width: $breakpoint-tablet) {
+			width: 90%;
+	}
+
+	/* ==== DESKTOP CODE  860px ===== */
+
+	@media screen and (min-width: $breakpoint-desktop) {
+			width: 80%;
+	}
+
+	/* ==== LG DESKTOP CODE  1200px  ==== */
+	@media screen and (min-width: $breakpoint-desktop-lg) {
+			width: 70%; 
+	}
+
+}
+
+header {
+	display: flex;
+	color: $light;
+	justify-content: space-between;
+	width:100%;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+// ==== MOBILE ONLY FIXED NAV
+.MobileFixedNav {
+	position: fixed;
+	top: 0;
+	height: 10%;
+	background-color: $dark;
+	z-index: 2;
+	width:100%;
+
+	.mobileLogo {
+		width: 80px;
+		margin: 0 auto;
+	}
+	@media screen and (min-width: $breakpoint-tablet) {
+	height: 11%;
+	}
+	@media screen and (min-width: $breakpoint-desktop) {
+		display: none;
+	}
+}
+
+
+
+// === Desktop Logo ======
+.logo {
+	width: 10%;
+	padding: .8em;
+	display: none;
+	
+	@media screen and (min-width: $breakpoint-desktop) {
+		position: fixed;
+		top: 0;
+		left: 5px;
+		z-index: 4;
+		display: block;
+		width: 65px;
+		padding: 0;
+	}
+}
+
+nav {
+	display: none;
+	position: fixed;
+	top:10%;
+	z-index: 3;
+	width: 100%;
+	font-weight: 700;
+	color: $light;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			display: block;
+
+
+			a {
+				display:block;
+				padding: .5em 2em;
+				transition: all 1s ease-out;
+				@include setBgColorAndHover(rgba(34,40,49,0.9), $light);
+			}
+		}
+	}
+	@media screen and (min-width: $breakpoint-desktop) {
+		display: block;
+		background-color: $dark;
+		position: fixed;
+		top: 0;
+		left: 0;
+		text-align: center;
+			ul {
+				li {
+					display: inline-block;
+					a {
+						display:block;
+						padding: .5em 1em;
+						transition: all 1s ease-out;
+						background: none;
+					}
+				}
+			}
+
+	}
+}
+
+.socialHeader {
+	display: none;
+
+	.fa {
+		padding: .2em;
+	}
+	@media screen and (min-width: $breakpoint-desktop) {
+		display: block;
+		position: fixed;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		text-align: right;
+		padding: .5em;
+		width: 25%;
+
+		.fa {
+			padding: 0 1em;
+		}
+	}
+}
+
+
+// =========== SECTION ============
+
+.otherSections {
+	 @extend main;
+}
+
+
+section {
+
+	h2 {
+		text-align: center;
+	}
+}
+
+// ====== DIFFERENT SECTIONS ======
+
+.sectionone,
+.sectiontwo,
+.sectionthree,
+.sectionfour,
+.sectionfive {
+	padding: 2em 1em;
+	width: 100%;
+}
+
+// ---- Section 1  -----
+.sectionone {
+	background: url('/images/texture1.jpg');
+	background-position: center;
+   	background-repeat: no-repeat;
+   	background-size: cover;
+   	padding-top: 7em;
+   	padding-bottom: 5em;
+
+	@media screen and (min-width: $breakpoint-desktop) {
+	padding-top: 7em;
+	}
+
+	@media screen and (min-width: $breakpoint-desktop-lg) {
+	padding-top: 10em;
+	padding-bottom: 10em;
+	}
+}
+
+.fa.fa-globe,
+.fa.fa-map-signs {
+	font-size: 2em;
+	text-align:center;
+	display:block;
+}
+
+.sectionfive {
+	padding-bottom: 7em;
+}
+
+
+// ===== IMAGE CONTAINTER =====
+
+.imageContainer {
+  	overflow: hidden;
+  	width: 100%;
+
+  	img {
+  		display: block;
+  		max-width: 100%;
+	  	-moz-transition: all 0.3s;
+	 	-webkit-transition: all 0.3s;
+	 	transition: all 0.3s;
+
+	 	&:hover {
+	 		  opacity: 0.6;
+	 		 -moz-transform: scale(1.1);
+			 -webkit-transform: scale(1.1);
+			 transform: scale(1.1);
+	 	}
+  	}
+}
+
+.imgTitle {
+	background-color: $dark;
+	color: $light;
+	text-align: center;
+	padding: 1em 0;
+	font-family: $mainFont;
+	font-weight: 700;
+}
+
+
+// ==== SOCIAL FOOTER ICONS  ====
+
+.socialFooter {
+	display: flex;
+	justify-content: space-between;
+	width: 60%;
+	margin: 0 auto;
+	padding: 0 0 1em;
+
+	a > .fa {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $light;
+		border-radius: 100%;
+		font-size: 1.5em;
+		width: 2em;
+		height: 2em;
+		transition: all .2s ease-out;
+		@include setBgColorAndHover($colorset1, $light);
+	}
+
+	@media screen and (min-width: $breakpoint-tablet) {
+		margin: 0;
+		justify-content: flex-start;
+		a {
+			padding: 0 .5em;
+		}
+	}
+}
+
+.newletter {
+	font-size: 1.8em;
+}
+
+
+// ======== FOOTER CONTENT ====
+
+.footercontact {
+	display: none;
+		
+		@media screen and (min-width: $breakpoint-tablet) {
+			display: block;
+			text-align: left;
+
+			ul {
+				font-size: 1.3em;
+				font-weight: 700;
+			}
+		}
+		
+}

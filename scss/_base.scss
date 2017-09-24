@@ -1,0 +1,141 @@
+html,body {
+	height:100%;
+	margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-family: $mainFont;
+	font-size: 18px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	width:100%;
+	display: block;
+}
+
+// Headings
+
+h1 {
+	font-family: $headerFont;
+	font-size: 2em;
+	margin: 0;
+}
+
+h2 {
+	font-family: $headerFont;
+	font-size: 1.8em;
+	margin: 0;
+}
+
+// === Margins ============
+.margin-bottom-sm {
+	margin-bottom: .5em;
+}
+
+.margin-bottom-lg {
+	margin-bottom: 1em;
+}
+
+.margin-top-sm {
+	margin-top: .5em;
+}
+
+.margin-top-lg {
+	margin-top: 1em;
+}
+
+// Columns 
+
+.row {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+main {
+	margin-top: 10%;
+
+	@media screen and (min-width: $breakpoint-desktop) {
+	margin-top: 0;
+	}
+}
+
+// two-col
+.col-6 {
+	width: 48%;
+}
+
+// three-col
+.col-4 {
+	width: 100%;
+
+	/* ==== DESKTOP CODE  860px ===== */
+
+		@media screen and (min-width: $breakpoint-tablet) {
+				width: 33.33%;
+				float:left;
+		}
+} 
+// four-col
+.col-3 {
+	width: 100%;
+
+	/* ==== DESKTOP CODE  860px ===== */
+
+		@media screen and (min-width: $breakpoint-tablet) {
+				width: 25%;
+				float:left;
+		}
+}
+
+
+//===== Buttons ====
+button {
+	border: none;
+	padding: 0;
+	width:100%;	
+}
+
+.btn > a {
+		display:block;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: $mainFont;
+		width:100%;
+		transition: all .2s ease-in;
+		padding:1.5em;
+		@include setBgColorAndHover($dark, $light);
+}
+
+
+
+// ==== FOOTER ======
+footer {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 1.1;
+	font-size: 12px;
+	font-weight: 400;
+	font-family: $mainFont;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	>p {
+		padding: 5em 0;
+	}
+	> a .fa {
+		margin-top: 1em;
+		color: $dark;
+		font-size: 3em;
+	}
+}
