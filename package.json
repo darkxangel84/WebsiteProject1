@@ -1,5 +1,5 @@
 {
-  "name": "AimeeTacchi",
+  "name": "Project1",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/darkxangel84/AimeeTacchi.git)"
+    "url": "(https://github.com/darkxangel84/WebsiteProject1)"
   },
   "author": "",
   "license": "ISC",
