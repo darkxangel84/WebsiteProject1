@@ -32,12 +32,12 @@
 	/* ==== DESKTOP CODE  860px ===== */
 
 	@media screen and (min-width: $breakpoint-desktop) {
-			width: 80%;
+			width: 70%;
 	}
 
 	/* ==== LG DESKTOP CODE  1200px  ==== */
 	@media screen and (min-width: $breakpoint-desktop-lg) {
-			width: 70%; 
+			width: 60%; 
 	}
 
 }
